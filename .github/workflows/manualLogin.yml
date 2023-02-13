@@ -30,7 +30,7 @@ jobs:
       run: echo "Hello ${{ github.event.inputs.name }}"
       
     - name: Azure Login      
-      uses: Azure/login@v1.4.6      
+      uses: Azure/login@v1     
         with:        
-          creds:${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
         
