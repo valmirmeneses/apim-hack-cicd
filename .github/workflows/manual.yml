@@ -28,9 +28,8 @@ jobs:
     # Runs a single command using the runners shell
     - name: Azure Login
       uses: Azure/login@v1.4.6
-      with:
-        # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
-        creds: # optional
+      with: # Set Azure credentials secret as an input
+        credentials: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Deploy Azure Resource Manager (ARM) Template
       uses: Azure/arm-deploy@v1.0.9
       with:
